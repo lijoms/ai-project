@@ -1,24 +1,13 @@
-/* Spider-Man-inspired editorial theme.
-   Fraunces adds expressive display serifs; Source Serif 4 keeps prose readable.
-   If Google Fonts is unavailable, the local serif fallbacks remain usable. */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+/* Base, layout, components, then responsive and motion preferences. */
 :root {
   --paper:#f7faff;
-  --ink:#071b3d;
-  --muted:#364d75;
-  --line:#9fb9e8;
-  --green:#ffb3b3;
-  --soft:#e1ebff;
-  --dark:#071c45;
-  /* Legacy accent name retained for compatibility with the existing page. */
-  --red:#cf102d;
-  --red-hover:#a60822;
-  --blue:#064cbd;
-  --white:#ffffff;
-  --display-font:'Fraunces','Iowan Old Style','Palatino Linotype',Georgia,serif;
-  --body-font:'Source Serif 4','Iowan Old Style',Georgia,serif;
-  --ui-font:Arial,Helvetica,sans-serif;
-  --radius:10px;
+  --ink:#081b3f;
+  --muted:#3e5378;
+  --line:#afc6ed;
+  --green:#ffb3bd;
+  --soft:#e5eeff;
+  --dark:#082559;
+  --radius:4px;
 }
 * {
   box-sizing:border-box;
@@ -31,7 +20,7 @@ body {
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:var(--body-font);
+  font-family:Arial,Helvetica,sans-serif;
   font-size:16px;
   line-height:1.65;
 }
@@ -46,11 +35,11 @@ button,a {
   -webkit-tap-highlight-color:transparent;
 }
 a:focus-visible,button:focus-visible {
-  outline:3px solid var(--red);
+  outline:3px solid #cf102d;
   outline-offset:5px;
 }
 ::selection {
-  background:#ffc9ce;
+  background:var(--green);
   color:var(--ink);
 }
 .wrap {
@@ -106,7 +95,7 @@ a:focus-visible,button:focus-visible {
   left:15px;
   top:-100px;
   background:var(--ink);
-  color:var(--white);
+  color:white;
   padding:12px;
   z-index:20;
 }
@@ -144,7 +133,7 @@ a:focus-visible,button:focus-visible {
   margin:26px 0;
 }
 .serif {
-  font-family:var(--display-font);
+  font-family:Georgia,'Times New Roman',serif;
   font-weight:400;
   font-style:italic;
   letter-spacing:-.045em;
@@ -159,17 +148,17 @@ a:focus-visible,button:focus-visible {
   display:inline-flex;
   gap:38px;
   align-items:center;
-  background:var(--ink);
-  color:var(--white);
+  background:#cf102d;
+  color:white;
   padding:14px 20px;
   font-size:13px;
   text-decoration:none;
   border-radius:3px;
   margin-top:19px;
-  transition:background .2s,transform .2s,box-shadow .2s;
+  transition:background .2s;
 }
 .button:hover {
-  background:#063f9c;
+  background:#a80b24;
 }
 .button span {
   font-size:23px;
@@ -183,7 +172,7 @@ a:focus-visible,button:focus-visible {
 }
 .hero-meta span {
   margin:0 9px;
-  color:#3b5d91;
+  color:#496ba2;
 }
 .hero-art {
   margin:0;
@@ -230,7 +219,7 @@ a:focus-visible,button:focus-visible {
 }
 .chapter-strip p {
   margin:0;
-  font-family:var(--display-font);
+  font-family:Georgia,serif;
   font-size:19px;
 }
 .chapter-strip>span:last-child {
@@ -304,7 +293,7 @@ h3 {
   color:var(--muted);
 }
 .flow-arrow {
-  color:#0757c9;
+  color:#1656bc;
 }
 .understand-content .caption {
   font-size:10px!important;
@@ -339,18 +328,18 @@ h3 {
 .use-switch button {
   padding:10px 22px;
   background:transparent;
-  border:1px solid #547fc6;
+  border:1px solid #6f95d0;
   border-radius:3px;
   font-size:12px;
   cursor:pointer;
-  transition:background .2s,transform .2s,box-shadow .2s;
+  transition:background .2s;
 }
 .use-switch button:hover {
-  background:#c7dcff;
+  background:#cdddff;
 }
 .use-switch button[aria-pressed=true] {
-  background:var(--ink);
-  color:var(--white);
+  background:#cf102d;
+  color:white;
   border-color:var(--ink);
 }
 .use-panel {
@@ -391,12 +380,12 @@ h3 {
 }
 .tag {
   display:inline-block;
-  background:#cbdfff;
+  background:#cfdeff;
   padding:2px 7px;
   letter-spacing:1px;
 }
 .tag.warning {
-  background:#ffd2d8;
+  background:#ffd1d9;
 }
 .risk-grid {
   display:grid;
@@ -409,7 +398,7 @@ h3 {
 }
 .risk-number {
   font-size:10px;
-  color:#b30926;
+  color:#b30d29;
 }
 .risk-grid h3 {
   font-size:18px;
@@ -439,7 +428,7 @@ h3 {
   font-size:43px;
 }
 .future-intro {
-  color:#cfdeff;
+  color:#d4e3ff;
   font-size:14px;
   max-width:400px;
 }
@@ -463,7 +452,7 @@ h3 {
 }
 .future-take {
   font-size:12px;
-  border-top:1px solid #567ec1;
+  border-top:1px solid #6288c8;
   padding-top:20px;
   margin-bottom:0;
 }
@@ -473,7 +462,7 @@ h3 {
   margin-right:9px;
 }
 .energy-stat {
-  border-left:1px solid #567ec1;
+  border-left:1px solid #6288c8;
   padding-left:35px;
   display:flex;
   flex-direction:column;
@@ -514,7 +503,7 @@ h3 {
 .energy-bars i {
   width:100%;
   height:38px;
-  background:#3f87f5;
+  background:#4085eb;
   display:block;
 }
 .energy-bars div:last-child i {
@@ -623,243 +612,6 @@ footer p,footer>a:last-child {
 .no-script {
   font-size:13px;
 }
-
-/* Typography and graphic accents: a comic-editorial feel, without sacrificing
-   readable paragraphs or changing the existing HTML and JavaScript hooks. */
-h1,h2,h3,.wordmark {
-  font-family:var(--display-font);
-  font-weight:600;
-}
-h2 {
-  letter-spacing:-.045em;
-}
-.hero h1 {
-  font-weight:700;
-  line-height:1.08;
-  letter-spacing:-.055em;
-  color:var(--blue);
-  text-wrap:balance;
-}
-.serif {
-  color:var(--red);
-  font-weight:500;
-}
-.hero .serif {
-  text-decoration:underline;
-  text-decoration-color:#f16e7e;
-  text-decoration-thickness:3px;
-  text-underline-offset:8px;
-}
-.site-header nav,.eyebrow,.hero-meta,.hero-art figcaption,
-.chapter-strip>span,.button,.pipeline,.caption,.use-switch,
-.panel-label,.tag,.risk-number,.future-label,.energy-stat>span,
-.energy-bars span,.energy-stat>a,.sources small,.sources a:before,
-footer p,footer>a:last-child {
-  font-family:var(--ui-font);
-}
-.site-header {
-  border-bottom:2px solid var(--ink);
-}
-.brand-icon,.brand-dot,.ref {
-  color:var(--red);
-}
-.site-header nav a:hover {
-  color:var(--red);
-}
-.nav-source {
-  border-color:var(--ink);
-  border-radius:5px;
-  box-shadow:3px 3px 0 #cbdfff;
-}
-.hero {
-  position:relative;
-  isolation:isolate;
-}
-.hero::before {
-  content:'';
-  position:absolute;
-  z-index:-1;
-  top:24px;
-  right:10px;
-  width:43%;
-  height:85%;
-  pointer-events:none;
-  opacity:.55;
-  background-image:radial-gradient(#8eafea .9px,transparent .9px);
-  background-size:12px 12px;
-  mask-image:radial-gradient(ellipse,#000 15%,transparent 72%);
-}
-.live-dot {
-  box-shadow:0 0 0 4px #ffd2d8;
-}
-.button {
-  background:var(--red);
-  border:2px solid var(--ink);
-  border-radius:5px;
-  box-shadow:5px 5px 0 var(--ink);
-  font-weight:700;
-}
-.button:hover {
-  background:var(--red-hover);
-  transform:translate(-2px,-2px);
-  box-shadow:7px 7px 0 var(--ink);
-}
-.button:active {
-  transform:translate(3px,3px);
-  box-shadow:2px 2px 0 var(--ink);
-}
-.hero-art {
-  border:1px solid var(--line);
-  border-radius:48% 48% 12px 12px;
-  padding:20px 12px;
-  background:radial-gradient(ellipse at 50% 40%,#c4daff,transparent 72%);
-}
-/* Recolour the original green SVG without needing to edit the image file. */
-.hero-art img {
-  filter:grayscale(1) sepia(1) saturate(2.5) hue-rotate(178deg);
-  mix-blend-mode:multiply;
-}
-.chapter-strip {
-  border-top:2px solid var(--ink);
-  border-bottom:2px solid var(--ink);
-  background:var(--blue);
-  color:var(--white);
-}
-.chapter-strip p {
-  font-style:italic;
-}
-.eyebrow {
-  color:var(--red);
-}
-.lead {
-  font-family:var(--display-font);
-  font-size:23px;
-  font-weight:500;
-}
-.pipeline {
-  border:1px solid #7ba1e4;
-  border-left:5px solid var(--blue);
-  box-shadow:4px 4px 0 #cbdfff;
-}
-.pipeline div>span {
-  color:var(--red);
-  font-weight:700;
-}
-.everyday {
-  background-color:var(--soft);
-  background-image:radial-gradient(#9fb9e8 .65px,transparent .65px);
-  background-size:16px 16px;
-  border-top:2px solid var(--blue);
-  border-bottom:2px solid var(--blue);
-}
-.use-switch button {
-  background:var(--paper);
-  color:var(--ink);
-  min-height:44px;
-  border:1px solid var(--blue);
-  font-weight:700;
-}
-.use-switch button[aria-pressed=true] {
-  background:var(--red);
-  border-color:var(--ink);
-  color:var(--white);
-  box-shadow:3px 3px 0 var(--ink);
-}
-.use-panel {
-  border:2px solid var(--ink);
-  box-shadow:6px 6px 0 #91b8f6;
-}
-.use-heading h3 {
-  color:var(--blue);
-  font-weight:600;
-}
-.tag {
-  color:#073b8e;
-  border:1px solid #7ba1e4;
-  border-radius:3px;
-}
-.tag.warning {
-  color:#9f0925;
-  border-color:#ec7a8d;
-}
-.risk-grid article {
-  padding:20px 17px;
-  border:1px solid var(--line);
-  border-top:4px solid var(--red);
-  border-radius:0 0 var(--radius) var(--radius);
-  background:var(--white);
-  box-shadow:4px 4px 0 #c3d6f7;
-}
-.risk-grid article:nth-child(even) {
-  border-top-color:var(--blue);
-}
-.risk-grid h3 {
-  font-weight:600;
-}
-.future {
-  position:relative;
-  overflow:hidden;
-  border:2px solid var(--ink);
-  background:linear-gradient(125deg,#071c45 0%,#063d8c 100%);
-  box-shadow:7px 7px 0 #f0778b;
-}
-.future .serif {
-  color:var(--green);
-}
-.future a:focus-visible {
-  outline-color:#ffb3b3;
-}
-.energy-stat strong {
-  font-family:var(--display-font);
-  font-weight:600;
-}
-.energy-bars i {
-  border:1px solid #83b5ff;
-  border-radius:4px 4px 0 0;
-}
-.energy-bars div:last-child i {
-  background:#f04460;
-  border-color:#ffa2af;
-}
-.sources a {
-  transition:background .2s;
-}
-.sources a:hover {
-  background:var(--soft);
-}
-.sources strong {
-  color:var(--blue);
-  font-family:var(--display-font);
-  font-size:16px;
-  font-weight:600;
-}
-.process h3 {
-  color:var(--blue);
-}
-.process a {
-  color:var(--red);
-}
-footer {
-  border-top:3px solid var(--red);
-}
-@media(max-width:720px) {
-  .hero::before {
-    width:100%;
-    top:45%;
-    height:50%;
-    right:0;
-  }
-  .risk-grid {
-    gap:20px 14px;
-  }
-  .risk-grid article {
-    padding:16px 12px;
-  }
-  .future {
-    box-shadow:4px 4px 0 #f0778b;
-  }
-}
-
 @media(min-width:1400px) {
   .hero {
     padding-top:85px;
@@ -1065,7 +817,7 @@ footer {
   }
   .energy-stat {
     border-left:0;
-    border-top:1px solid #567ec1;
+    border-top:1px solid #6288c8;
     padding:25px 0 0;
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -1124,8 +876,7 @@ footer {
   html {
     scroll-behavior:auto;
   }
-  *,*::before,*::after {
+  * {
     transition:none!important;
-    animation:none!important;
   }
 }
