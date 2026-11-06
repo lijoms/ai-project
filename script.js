@@ -3,22 +3,22 @@
 // Each example pairs an opportunity with a practical limit. No data is collected.
 const examples = {
   study: {
-    title: 'A study partner, on demand.',
-    intro: 'Ask for practice questions or a simpler explanation of a difficult concept.',
-    upside: 'Different explanations can help you get unstuck and practise at your own pace.',
-    catch: 'A confident answer may contain an invented fact. Check it against course materials, then explain it yourself.'
+    title: 'AI as a study partner',
+    intro: 'Seeking help from AI to give you practice questions or exams, as well as summaries or basic explanations of course concepts.',
+    upside: 'Challenging your understanding could help you deepen it, and AI assistance could allow you to surpass academic roadblocks.',
+    catch: 'Blind trust could lead to ignorance. AI can invent facts or give you information that don't align with course materials.'
   },
   work: {
-    title: 'A first draft, faster.',
-    intro: 'Turn non-sensitive meeting notes into a draft summary or action list.',
-    upside: 'Less time formatting a document can leave more time for decisions and discussion.',
-    catch: 'A summary can omit a condition or invent a task. Compare it with the original notes and confirm the owners.'
+    title: 'AI as a secretary',
+    intro: 'Letting AI turn meeting notes into an action list, summarizing important information catered to the necessary audiences (if necessary).',
+    upside: 'Less time formatting a document could leave more time to have the discussions and deliver in a prompt and organized manner.',
+    catch: 'These tools could misinterpret or omit certain information that doesn't seem important, but holds a significant place in your own list. If you did not double-check, you could run into major issues.'
   },
   access: {
-    title: 'Another way to connect.',
-    intro: 'Use automatic captions to follow a recorded lecture or conversation.',
-    upside: 'Text alongside speech can make information easier to access and revisit.',
-    catch: 'Names, accents and technical terms can be misheard. Correct important captions and offer another way to get help.'
+    title: 'AI as a bridge',
+    intro: 'Using automatic captions to follow a recorded lecture or conversation, bridging the potential language or accessibility gaps',
+    upside: 'Consuming recordings could become much more convenient and efficient, helping you with reviewing and understanding its content.',
+    catch: 'AI could misinterpret or misspell information due to external factors like accents, technical issues, or unique spellings in general. If the captions aren't accurate, they will do more harm than good.'
   }
 };
 
